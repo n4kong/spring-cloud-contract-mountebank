@@ -15,6 +15,7 @@ public class CustomConverter implements StubGenerator {
 
     @Override
     public Map<Contract, String> convertContents(String rootName, ContractMetadata content) {
+        System.out.println("HELLO");
         Map map = new HashMap<Contract,String>();
         content.getConvertedContract().stream().forEach(c -> {
             map.put(c, "This is Dummy " + c.getName());
@@ -24,7 +25,7 @@ public class CustomConverter implements StubGenerator {
 
     @Override
     public String generateOutputFileNameForInput(String inputFileName) {
-        return inputFileName;
+        return "CUSTOM_" + inputFileName;
     }
 
     @Override
